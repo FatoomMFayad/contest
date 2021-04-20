@@ -12,6 +12,7 @@ class ContestRegistrationTest extends TestCase
     /** @test **/
     public function an_email_can_entered_into_the_contest()
     {
+        $this->withoutExceptionHandling();
         $this->post('/contest', [
             'email' => 'aa@aa.com'
         ]);

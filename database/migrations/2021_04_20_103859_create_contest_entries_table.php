@@ -15,6 +15,7 @@ class CreateContestEntriesTable extends Migration
     {
         Schema::create('contest_entries', function (Blueprint $table) {
             $table->id();
+            $table->string('email');
             $table->timestamps();
         });
     }

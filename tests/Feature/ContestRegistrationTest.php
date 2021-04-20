@@ -8,6 +8,8 @@ use Tests\TestCase;
 
 class ContestRegistrationTest extends TestCase
 {
+    use RefreshDatabase;
+    /** @test **/
     public function an_email_can_entered_into_the_contest()
     {
         $this->post('/contest', [

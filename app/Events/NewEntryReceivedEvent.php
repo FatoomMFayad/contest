@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\ContestEntry;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -14,14 +15,16 @@ class NewEntryReceivedEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $contestEntry;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ContestEntry $contestEntry)
     {
-        //
+        $this->contestEntry = $contestEntry;
     }
 
     /**

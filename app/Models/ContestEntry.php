@@ -14,8 +14,8 @@ class ContestEntry extends Model
 
     protected static function booted()
     {
-        static::created(function ($contestEntry) {
-            event(NewEntryReceivedEvent::class);
-        });
+        // static::created(function ($contestEntry) {
+        //     event(NewEntryReceivedEvent::class);
+        // });
     }
 }

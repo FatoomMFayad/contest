@@ -28,4 +28,13 @@ class ContestRegistrationTest extends TestCase
         ]);
         $this->assertDatabaseCount('contest_entries', 0);
     }
+    /** @test **/
+    public function email_needs_to_be_an_email()
+    {
+        $this->withoutExceptionHandling();
+        $this->post('/contest', [
+            'email' => 'dsfgggd'
+        ]);
+        $this->assertDatabaseCount('contest_entries', 0);
+    }
 }
